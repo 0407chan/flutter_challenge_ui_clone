@@ -6,7 +6,7 @@ class DatePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -14,8 +14,9 @@ class DatePicker extends StatelessWidget {
             "${_getDayOfWeek(DateTime.now().weekday)} ${DateTime.now().day}",
             textAlign: TextAlign.start,
           ),
-          Row(
-            children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: [
               Text(
                 'TODAY',
                 style: Theme.of(context).textTheme.titleMedium,
@@ -26,16 +27,22 @@ class DatePicker extends StatelessWidget {
                       color: Colors.pink[400],
                     ),
               ),
-              for (var i = 1; i <= 7; i++)
-                Text(
-                  '${DateTime.now().day + i} ',
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Colors.grey[500],
-                        fontWeight: FontWeight.w300,
-                      ),
-                ),
-            ],
-          )
+              Row(
+                children: [
+                  for (var date = DateTime.now();
+                      date.month == DateTime.now().month;
+                      date = date.add(const Duration(days: 1)))
+                    Text(
+                      '${date.day} ',
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
+                ],
+              ),
+            ]),
+          ),
         ],
       ),
     );
