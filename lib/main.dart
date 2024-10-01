@@ -180,6 +180,9 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           elevation: 0,
+          scrolledUnderElevation: 0, // 스크롤 시 앱바 높이 변경 방지
+          shadowColor: Colors.transparent, // 그림자 제거
+          backgroundColor: Colors.grey[900], // 앱바 배경색 직접 지정
           leading: const CircleAvatar(
             backgroundImage: NetworkImage(
                 'https://www.wikihow.com/images/thumb/e/e9/Draw-Pikachu-Step-14.jpg/v4-728px-Draw-Pikachu-Step-14.jpg'),
