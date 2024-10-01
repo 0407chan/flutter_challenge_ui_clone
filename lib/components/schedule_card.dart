@@ -12,6 +12,15 @@ class ScheduleCard extends StatelessWidget {
     return Colors.primaries[Random().nextInt(Colors.primaries.length)];
   }
 
+  List<String> _getParticipants() {
+    var participants = schedule.participants.toList();
+    if (participants.contains('ME')) {
+      participants.remove('ME');
+      participants.insert(0, 'ME');
+    }
+    return participants;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -86,21 +95,25 @@ class ScheduleCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Row(children: [
-                  for (var participant in schedule.participants.take(3))
+                  for (var participant in _getParticipants().take(3))
                     Padding(
                       padding: const EdgeInsets.only(right: 32),
                       child: Text(
                         participant,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: Colors.grey[800],
-                            ),
+                            color: participant == "ME"
+                                ? Colors.black87
+                                : Colors.grey[700],
+                            fontWeight: participant == "ME"
+                                ? FontWeight.bold
+                                : FontWeight.normal),
                       ),
                     ),
-                  if (schedule.participants.length > 3)
+                  if (_getParticipants().length > 3)
                     Padding(
                       padding: const EdgeInsets.only(right: 32),
                       child: Text(
-                        '+${schedule.participants.length - 3}',
+                        '+${_getParticipants().length - 3}',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: Colors.grey[800],
                             ),

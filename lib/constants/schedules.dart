@@ -6,7 +6,23 @@ final List<Schedule> schedules = [
     title: 'TEAM MEETING',
     startAt: DateTime.now(),
     endAt: DateTime.now().add(const Duration(hours: 2)),
-    participants: ['JOHN', 'EMMA', 'MICHAEL', 'SOPHIA', 'ME'],
+    participants: ['JOHN', 'EMMA', 'ME'],
+  ),
+  Schedule(
+    title: 'PROJECT PLANNING MEETING',
+    startAt: DateTime.now(),
+    endAt: DateTime.now().add(const Duration(hours: 2)),
+    participants: [
+      'KIM',
+      'LEE',
+      'PARK',
+    ],
+  ),
+  Schedule(
+    title: 'CUSTOMER FEEDBACK REVIEW',
+    startAt: DateTime.now(),
+    endAt: DateTime.now().add(const Duration(hours: 2)),
+    participants: ['HONG', 'LIM', 'CHOI', 'KANG', 'ME'],
   ),
 
   // 1일 후
