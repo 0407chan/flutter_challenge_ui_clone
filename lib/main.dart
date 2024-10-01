@@ -75,8 +75,7 @@ class _AppState extends State<App> {
           shadowColor: Colors.transparent, // 그림자 제거
           backgroundColor: Colors.grey[900], // 앱바 배경색 직접 지정
           leading: const CircleAvatar(
-            backgroundImage: NetworkImage(
-                'https://www.wikihow.com/images/thumb/e/e9/Draw-Pikachu-Step-14.jpg/v4-728px-Draw-Pikachu-Step-14.jpg'),
+            backgroundImage: AssetImage('assets/images/bird.jpg'),
           ),
           leadingWidth: 80,
           actions: [
