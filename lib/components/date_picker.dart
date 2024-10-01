@@ -20,8 +20,20 @@ class DatePicker extends StatelessWidget {
                 'TODAY',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              const Text('·'),
-              for (var i = 1; i <= 7; i++) Text('${DateTime.now().day + i}'),
+              Text(
+                '·',
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      color: Colors.pink[400],
+                    ),
+              ),
+              for (var i = 1; i <= 7; i++)
+                Text(
+                  '${DateTime.now().day + i} ',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: Colors.grey[500],
+                        fontWeight: FontWeight.w300,
+                      ),
+                ),
             ],
           )
         ],

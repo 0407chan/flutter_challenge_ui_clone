@@ -104,39 +104,39 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
+        scaffoldBackgroundColor: Colors.grey[900], // 앱의 기본 배경색
         textTheme: TextTheme(
-          titleLarge: GoogleFonts.notoSans(
-            fontSize: 32,
+          titleLarge: GoogleFonts.roboto(
+            fontSize: 64,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Colors.white, // 제목 텍스트 색상
           ),
-          titleMedium: GoogleFonts.notoSans(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
+          titleMedium: GoogleFonts.roboto(
+            fontSize: 48,
+            color: Colors.white,
           ),
-          titleSmall: GoogleFonts.notoSans(
+          bodyLarge: GoogleFonts.roboto(
             fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Colors.white60, // 본문 텍스트 색상
           ),
-          bodyLarge: GoogleFonts.notoSans(
-            fontSize: 16,
-            color: Colors.black87,
-          ),
-          bodyMedium: GoogleFonts.notoSans(
+          bodyMedium: GoogleFonts.roboto(
             fontSize: 14,
-            color: Colors.black54,
+            color: Colors.white60, // 중간 크기 본문 텍스트 색상
           ),
-          bodySmall: GoogleFonts.notoSans(
+          bodySmall: GoogleFonts.roboto(
             fontSize: 12,
-            color: Colors.black45,
+            color: Colors.white60, // 작은 크기 본문 텍스트 색상
           ),
         ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey[900], // 앱바 배경색
+          foregroundColor: Colors.white70, // 앱바 텍스트 및 아이콘 색상
+        ),
+        cardColor: Colors.grey[900], // 카드 위젯의 배경색
+        // dividerColor: Colors.white24, // 구분선 색상
       ),
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
           elevation: 0,
           leading: const CircleAvatar(
             backgroundImage: NetworkImage(
@@ -153,7 +153,7 @@ class App extends StatelessWidget {
         body: Column(
           children: [
             const DatePicker(),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
