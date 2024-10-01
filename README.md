@@ -1,2 +1,3 @@
-# flutter_challenge_ui_clone
-nomad coder flutter challenge
+# ui_clone
+
+nomad coder flutter challenge ui clone
