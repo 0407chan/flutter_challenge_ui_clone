@@ -11,88 +11,131 @@ void main() {
 class App extends StatelessWidget {
   final List<Schedule> schedules = [
     Schedule(
-      title: 'Meeting',
+      title: 'QUARTERLY REVIEW',
       startAt: DateTime.now(),
       endAt: DateTime.now().add(const Duration(hours: 1)),
-      participants: ['John Doe', 'Jane Doe'],
+      participants: ['JOHN', 'EMMA', 'MICHAEL', 'SOPHIA', 'WILLIAM', 'ME'],
     ),
     Schedule(
-      title: '팀 회의',
+      title: 'PRODUCT LAUNCH',
       startAt: DateTime.now().add(const Duration(days: 1)),
       endAt: DateTime.now().add(const Duration(days: 1, hours: 2)),
-      participants: ['me', '김철수', '이영희'],
+      participants: ['OLIVIA', 'JAMES', 'AVA', 'ALEXANDER', 'ME'],
     ),
     Schedule(
-      title: '프로젝트 브리핑',
+      title: 'BUDGET PLANNING',
       startAt: DateTime.now().add(const Duration(days: 2)),
       endAt: DateTime.now().add(const Duration(days: 2, hours: 1)),
-      participants: ['박지성', '손흥민', '김민재'],
+      participants: [
+        'CHARLOTTE',
+        'BENJAMIN',
+        'AMELIA',
+        'DANIEL',
+        'EMILY',
+        'HENRY'
+      ],
     ),
     Schedule(
-      title: '고객 미팅',
+      title: 'CLIENT PRESENTATION',
       startAt: DateTime.now().add(const Duration(days: 3)),
       endAt: DateTime.now().add(const Duration(days: 3, hours: 2)),
-      participants: ['me', '이강인', '황희찬'],
+      participants: ['ELIZABETH', 'SAMUEL', 'SOPHIA', 'ME'],
     ),
     Schedule(
-      title: '제품 출시 회의',
+      title: 'TEAM BUILDING',
       startAt: DateTime.now().add(const Duration(days: 4)),
       endAt: DateTime.now().add(const Duration(days: 4, hours: 3)),
-      participants: ['김연아', '박태환', '손연재'],
+      participants: ['JOSEPH', 'EVELYN', 'DAVID', 'ABIGAIL', 'CHRISTOPHER'],
     ),
     Schedule(
-      title: '전략 기획 세션',
+      title: 'STRATEGIC PLANNING',
       startAt: DateTime.now().add(const Duration(days: 5)),
       endAt: DateTime.now().add(const Duration(days: 5, hours: 4)),
-      participants: ['me', '유재석', '강호동', '이수근'],
+      participants: [
+        'GRACE',
+        'ANDREW',
+        'VICTORIA',
+        'DANIEL',
+        'SOFIA',
+        'MATTHEW',
+        'CHLOE',
+        'ME'
+      ],
     ),
     Schedule(
-      title: '분기별 성과 보고',
+      title: 'PERFORMANCE REVIEW',
       startAt: DateTime.now().add(const Duration(days: 6)),
       endAt: DateTime.now().add(const Duration(days: 6, hours: 2)),
-      participants: ['박보검', '송중기', '조인성'],
+      participants: ['RYAN', 'ZOEY', 'NATHAN', 'LILY'],
     ),
     Schedule(
-      title: '신입 사원 오리엔테이션',
+      title: 'NEW HIRE ORIENTATION',
       startAt: DateTime.now().add(const Duration(days: 7)),
       endAt: DateTime.now().add(const Duration(days: 7, hours: 5)),
-      participants: ['me', '아이유', '태연', '윤아'],
+      participants: [
+        'ETHAN',
+        'MIA',
+        'JACKSON',
+        'HANNAH',
+        'CHRISTOPHER',
+        'ADDISON',
+        'ME'
+      ],
     ),
     Schedule(
-      title: '마케팅 전략 회의',
+      title: 'MARKETING STRATEGY',
       startAt: DateTime.now().add(const Duration(days: 8)),
       endAt: DateTime.now().add(const Duration(days: 8, hours: 3)),
-      participants: ['방탄소년단', '블랙핑크', '트와이스'],
+      participants: ['SCARLETT', 'AIDEN', 'ELLA', 'LUCAS', 'ARIA'],
     ),
     Schedule(
-      title: 'IT 인프라 업그레이드 논의',
+      title: 'IT INFRASTRUCTURE',
       startAt: DateTime.now().add(const Duration(days: 9)),
       endAt: DateTime.now().add(const Duration(days: 9, hours: 2)),
-      participants: ['me', '빌 게이츠', '스티브 잡스', '마크 저커버그'],
+      participants: [
+        'LIAM',
+        'AVERY',
+        'ELIJAH',
+        'MADISON',
+        'GABRIEL',
+        'AUBREY',
+        'OWEN',
+        'ME'
+      ],
     ),
     Schedule(
-      title: '연말 파티 계획',
+      title: 'ANNUAL GALA',
       startAt: DateTime.now().add(const Duration(days: 10)),
       endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-      participants: ['전지현', '김태희', '송혜교', '공유'],
+      participants: ['ISABELLA', 'CARTER', 'HARPER', 'WYATT', 'EVELYN'],
     ),
     Schedule(
-      title: '연말 파티 계획',
+      title: 'BOARD MEETING',
       startAt: DateTime.now().add(const Duration(days: 10)),
       endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-      participants: ['전지현', '김태희', '송혜교', '공유'],
+      participants: ['NOAH', 'PENELOPE', 'GRAYSON', 'LAYLA', 'ME'],
     ),
     Schedule(
-      title: '연말 파티 계획',
+      title: 'SALES CONFERENCE',
       startAt: DateTime.now().add(const Duration(days: 10)),
       endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-      participants: ['전지현', '김태희', '송혜교', '공유'],
+      participants: ['OLIVER', 'RILEY', 'ELLIE', 'JULIAN', 'AUBREY', 'CALEB'],
     ),
     Schedule(
-      title: '연말 파티 계획',
+      title: 'COMPANY RETREAT',
       startAt: DateTime.now().add(const Duration(days: 10)),
       endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-      participants: ['전지현', '김태희', '송혜교', '공유'],
+      participants: [
+        'EMMA',
+        'JACK',
+        'HAZEL',
+        'LUKE',
+        'NORA',
+        'ISAAC',
+        'ZOE',
+        'LEVI',
+        'ME'
+      ],
     ),
   ];
 
@@ -108,7 +151,6 @@ class App extends StatelessWidget {
         textTheme: TextTheme(
           titleLarge: GoogleFonts.roboto(
             fontSize: 64,
-            fontWeight: FontWeight.bold,
             color: Colors.white, // 제목 텍스트 색상
           ),
           titleMedium: GoogleFonts.roboto(
@@ -116,11 +158,11 @@ class App extends StatelessWidget {
             color: Colors.white,
           ),
           bodyLarge: GoogleFonts.roboto(
-            fontSize: 16,
+            fontSize: 24,
             color: Colors.white60, // 본문 텍스트 색상
           ),
           bodyMedium: GoogleFonts.roboto(
-            fontSize: 14,
+            fontSize: 16,
             color: Colors.white60, // 중간 크기 본문 텍스트 색상
           ),
           bodySmall: GoogleFonts.roboto(
@@ -156,11 +198,12 @@ class App extends StatelessWidget {
             const SizedBox(height: 8),
             Expanded(
               child: ListView.builder(
-                shrinkWrap: true,
-                physics: const AlwaysScrollableScrollPhysics(),
-                itemCount: schedules.length,
+                itemCount: schedules.length, // 스케줄 리스트의 길이
                 itemBuilder: (context, index) {
-                  return ScheduleCard(schedule: schedules[index]);
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: ScheduleCard(schedule: schedules[index]),
+                  );
                 },
               ),
             ),
