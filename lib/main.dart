@@ -3,13 +3,34 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_clone/components/date_picker.dart';
 import 'package:ui_clone/components/schedule_card.dart';
 import 'package:ui_clone/constants/schedules.dart';
+import 'package:ui_clone/models/schedule.dart';
 
 void main() {
   runApp(const App());
 }
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   const App({super.key});
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  DateTime _currentDate = DateTime.now();
+
+  void updateCurrentDate(DateTime date) {
+    setState(() {
+      _currentDate = date;
+    });
+  }
+
+  List<Schedule> getCurrentSchedules() {
+    return schedules
+        .where((schedule) => schedule.startAt.day == _currentDate.day)
+        .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,15 +88,24 @@ class App extends StatelessWidget {
         ),
         body: Column(
           children: [
-            const DatePicker(),
+            DatePicker(
+                currentDate: _currentDate,
+                updateCurrentDate: updateCurrentDate),
             const SizedBox(height: 8),
+            if (getCurrentSchedules().isEmpty)
+              Text(
+                '예정된 일정이 없습니다.',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: Colors.white,
+                    ),
+              ),
             Expanded(
               child: ListView.builder(
-                itemCount: schedules.length, // 스케줄 리스트의 길이
+                itemCount: getCurrentSchedules().length, // 스케줄 리스트의 길이
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: ScheduleCard(schedule: schedules[index]),
+                    child: ScheduleCard(schedule: getCurrentSchedules()[index]),
                   );
                 },
               ),

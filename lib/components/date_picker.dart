@@ -1,25 +1,42 @@
 import 'package:flutter/material.dart';
 
 class DatePicker extends StatelessWidget {
-  const DatePicker({super.key});
+  final DateTime currentDate;
+  final Function(DateTime) updateCurrentDate;
+
+  const DatePicker(
+      {super.key, required this.currentDate, required this.updateCurrentDate});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: const EdgeInsets.only(
+        left: 16,
+        right: 16,
+        top: 24,
+        bottom: 8,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "${_getDayOfWeek(DateTime.now().weekday)} ${DateTime.now().day}",
-            textAlign: TextAlign.start,
-          ),
+          Text("${_getDayOfWeek(DateTime.now().weekday)} ${DateTime.now().day}",
+              textAlign: TextAlign.start,
+              style: const TextStyle(
+                color: Colors.white,
+              )),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
-              Text(
-                'TODAY',
-                style: Theme.of(context).textTheme.titleMedium,
+              GestureDetector(
+                onTap: () => updateCurrentDate(DateTime.now()),
+                child: Text(
+                  'TODAY',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: currentDate.day == DateTime.now().day
+                            ? Colors.white
+                            : Colors.grey[500],
+                      ),
+                ),
               ),
               Text(
                 '·',
@@ -32,12 +49,23 @@ class DatePicker extends StatelessWidget {
                   for (var date = DateTime.now();
                       date.month == DateTime.now().month;
                       date = date.add(const Duration(days: 1)))
-                    Text(
-                      '${date.day} ',
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: Colors.grey[500],
-                            fontWeight: FontWeight.w300,
-                          ),
+                    GestureDetector(
+                      onTap: () => updateCurrentDate(date),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Text(
+                          '${date.day}',
+                          style:
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
+                                    color: date.day == currentDate.day
+                                        ? Colors.white
+                                        : Colors.grey[500],
+                                    fontWeight: date.day == currentDate.day
+                                        ? FontWeight.bold
+                                        : FontWeight.w300,
+                                  ),
+                        ),
+                      ),
                     ),
                 ],
               ),

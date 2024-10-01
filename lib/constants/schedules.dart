@@ -1,68 +1,78 @@
 import 'package:ui_clone/models/schedule.dart';
 
 final List<Schedule> schedules = [
+  // 오늘
   Schedule(
-    title: 'QUARTERLY REVIEW',
+    title: 'TEAM MEETING',
     startAt: DateTime.now(),
-    endAt: DateTime.now().add(const Duration(hours: 1)),
-    participants: ['JOHN', 'EMMA', 'MICHAEL', 'SOPHIA', 'WILLIAM', 'ME'],
+    endAt: DateTime.now().add(const Duration(hours: 2)),
+    participants: ['JOHN', 'EMMA', 'MICHAEL', 'SOPHIA', 'ME'],
   ),
+
+  // 1일 후
   Schedule(
-    title: 'PRODUCT LAUNCH',
+    title: 'PROJECT KICKOFF',
     startAt: DateTime.now().add(const Duration(days: 1)),
-    endAt: DateTime.now().add(const Duration(days: 1, hours: 2)),
-    participants: ['OLIVIA', 'JAMES', 'AVA', 'ALEXANDER', 'ME'],
+    endAt: DateTime.now().add(const Duration(days: 1, hours: 1)),
+    participants: ['OLIVIA', 'JAMES', 'AVA', 'ALEXANDER', 'WILLIAM', 'EMILY'],
   ),
   Schedule(
-    title: 'BUDGET PLANNING',
+    title: 'CLIENT CALL',
+    startAt: DateTime.now().add(const Duration(days: 1, hours: 3)),
+    endAt: DateTime.now().add(const Duration(days: 1, hours: 4)),
+    participants: ['SOPHIA', 'DANIEL', 'ME'],
+  ),
+
+  // 2일 후
+  Schedule(
+    title: 'BUDGET REVIEW',
     startAt: DateTime.now().add(const Duration(days: 2)),
-    endAt: DateTime.now().add(const Duration(days: 2, hours: 1)),
-    participants: [
-      'CHARLOTTE',
-      'BENJAMIN',
-      'AMELIA',
-      'DANIEL',
-      'EMILY',
-      'HENRY'
-    ],
+    endAt: DateTime.now().add(const Duration(days: 2, hours: 2)),
+    participants: ['CHARLOTTE', 'BENJAMIN', 'AMELIA', 'HENRY', 'ME'],
   ),
+
+  // 3일 후
   Schedule(
-    title: 'CLIENT PRESENTATION',
+    title: 'PRODUCT DEMO',
     startAt: DateTime.now().add(const Duration(days: 3)),
-    endAt: DateTime.now().add(const Duration(days: 3, hours: 2)),
-    participants: ['ELIZABETH', 'SAMUEL', 'SOPHIA', 'ME'],
+    endAt: DateTime.now().add(const Duration(days: 3, hours: 1)),
+    participants: ['ELIZABETH', 'SAMUEL', 'SOPHIA', 'WILLIAM', 'OLIVER'],
   ),
   Schedule(
     title: 'TEAM BUILDING',
-    startAt: DateTime.now().add(const Duration(days: 4)),
-    endAt: DateTime.now().add(const Duration(days: 4, hours: 3)),
-    participants: ['JOSEPH', 'EVELYN', 'DAVID', 'ABIGAIL', 'CHRISTOPHER'],
-  ),
-  Schedule(
-    title: 'STRATEGIC PLANNING',
-    startAt: DateTime.now().add(const Duration(days: 5)),
-    endAt: DateTime.now().add(const Duration(days: 5, hours: 4)),
+    startAt: DateTime.now().add(const Duration(days: 3, hours: 3)),
+    endAt: DateTime.now().add(const Duration(days: 3, hours: 6)),
     participants: [
-      'GRACE',
-      'ANDREW',
-      'VICTORIA',
-      'DANIEL',
-      'SOFIA',
-      'MATTHEW',
-      'CHLOE',
+      'JOSEPH',
+      'EVELYN',
+      'DAVID',
+      'ABIGAIL',
+      'CHRISTOPHER',
+      'EMMA',
+      'MICHAEL',
       'ME'
     ],
   ),
+
+  // 4일 후
   Schedule(
-    title: 'PERFORMANCE REVIEW',
-    startAt: DateTime.now().add(const Duration(days: 6)),
-    endAt: DateTime.now().add(const Duration(days: 6, hours: 2)),
-    participants: ['RYAN', 'ZOEY', 'NATHAN', 'LILY'],
+    title: 'STRATEGY SESSION',
+    startAt: DateTime.now().add(const Duration(days: 4)),
+    endAt: DateTime.now().add(const Duration(days: 4, hours: 3)),
+    participants: ['GRACE', 'ANDREW', 'VICTORIA', 'DANIEL', 'SOFIA', 'MATTHEW'],
+  ),
+
+  // 5일 후
+  Schedule(
+    title: 'PERFORMANCE REVIEWS',
+    startAt: DateTime.now().add(const Duration(days: 5)),
+    endAt: DateTime.now().add(const Duration(days: 5, hours: 4)),
+    participants: ['RYAN', 'ZOEY', 'NATHAN', 'LILY', 'ME'],
   ),
   Schedule(
-    title: 'NEW HIRE ORIENTATION',
-    startAt: DateTime.now().add(const Duration(days: 7)),
-    endAt: DateTime.now().add(const Duration(days: 7, hours: 5)),
+    title: 'TRAINING WORKSHOP',
+    startAt: DateTime.now().add(const Duration(days: 5, hours: 5)),
+    endAt: DateTime.now().add(const Duration(days: 5, hours: 8)),
     participants: [
       'ETHAN',
       'MIA',
@@ -70,19 +80,23 @@ final List<Schedule> schedules = [
       'HANNAH',
       'CHRISTOPHER',
       'ADDISON',
-      'ME'
+      'OLIVIA'
     ],
   ),
+
+  // 6일 후
   Schedule(
-    title: 'MARKETING STRATEGY',
-    startAt: DateTime.now().add(const Duration(days: 8)),
-    endAt: DateTime.now().add(const Duration(days: 8, hours: 3)),
-    participants: ['SCARLETT', 'AIDEN', 'ELLA', 'LUCAS', 'ARIA'],
+    title: 'MARKETING BRAINSTORM',
+    startAt: DateTime.now().add(const Duration(days: 6)),
+    endAt: DateTime.now().add(const Duration(days: 6, hours: 2)),
+    participants: ['SCARLETT', 'AIDEN', 'ELLA', 'LUCAS', 'ARIA', 'JAMES', 'ME'],
   ),
+
+  // 7일 후
   Schedule(
-    title: 'IT INFRASTRUCTURE',
-    startAt: DateTime.now().add(const Duration(days: 9)),
-    endAt: DateTime.now().add(const Duration(days: 9, hours: 2)),
+    title: 'IT INFRASTRUCTURE REVIEW',
+    startAt: DateTime.now().add(const Duration(days: 7)),
+    endAt: DateTime.now().add(const Duration(days: 7, hours: 3)),
     participants: [
       'LIAM',
       'AVERY',
@@ -90,41 +104,22 @@ final List<Schedule> schedules = [
       'MADISON',
       'GABRIEL',
       'AUBREY',
-      'OWEN',
-      'ME'
+      'OWEN'
     ],
   ),
   Schedule(
-    title: 'ANNUAL GALA',
-    startAt: DateTime.now().add(const Duration(days: 10)),
-    endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-    participants: ['ISABELLA', 'CARTER', 'HARPER', 'WYATT', 'EVELYN'],
-  ),
-  Schedule(
-    title: 'BOARD MEETING',
-    startAt: DateTime.now().add(const Duration(days: 10)),
-    endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-    participants: ['NOAH', 'PENELOPE', 'GRAYSON', 'LAYLA', 'ME'],
-  ),
-  Schedule(
-    title: 'SALES CONFERENCE',
-    startAt: DateTime.now().add(const Duration(days: 10)),
-    endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
-    participants: ['OLIVER', 'RILEY', 'ELLIE', 'JULIAN', 'AUBREY', 'CALEB'],
-  ),
-  Schedule(
-    title: 'COMPANY RETREAT',
-    startAt: DateTime.now().add(const Duration(days: 10)),
-    endAt: DateTime.now().add(const Duration(days: 10, hours: 4)),
+    title: 'QUARTERLY PLANNING',
+    startAt: DateTime.now().add(const Duration(days: 7, hours: 4)),
+    endAt: DateTime.now().add(const Duration(days: 7, hours: 7)),
     participants: [
+      'NOAH',
+      'PENELOPE',
+      'GRAYSON',
+      'LAYLA',
+      'WILLIAM',
+      'SOPHIA',
+      'MICHAEL',
       'EMMA',
-      'JACK',
-      'HAZEL',
-      'LUKE',
-      'NORA',
-      'ISAAC',
-      'ZOE',
-      'LEVI',
       'ME'
     ],
   ),
