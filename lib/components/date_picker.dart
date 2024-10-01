@@ -40,8 +40,8 @@ class DatePicker extends StatelessWidget {
               ),
               Text(
                 '·',
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      color: Colors.pink[400],
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: const Color.fromARGB(255, 159, 56, 135),
                     ),
               ),
               Row(
